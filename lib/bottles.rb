@@ -1,8 +1,8 @@
 class Bottles
     def verse(number)
-        "99 bottles of milk on the wall, " +
-        "99 bottles of milk.\n" +
+        "#{number} bottles of milk on the wall, " +
+        "#{number} bottles of milk.\n" +
         "Take one down and pass it around, " +
-        "98 bottles of milk on the wall.\n"
+        "#{number - 1} bottles of milk on the wall.\n"
     end
 end
