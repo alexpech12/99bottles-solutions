@@ -10,6 +10,10 @@ class Bottles
         (finish..start).to_a.reverse.map { |number| verse(number) }.join("\n")
     end
 
+    def song
+        verses(99, 0)
+    end
+
     private
 
     def n_bottles(number)
