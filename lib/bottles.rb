@@ -1,8 +1,19 @@
 class Bottles
     def verse(number)
-        "#{number} bottles of milk on the wall, " +
-        "#{number} bottles of milk.\n" +
-        "Take one down and pass it around, " +
-        "#{number - 1} bottle#{number - 1 > 1 ? 's' : ''} of milk on the wall.\n"
+        "#{n_bottles(number)} of milk on the wall, " +
+        "#{n_bottles(number)} of milk.\n" +
+        "Take #{number == 1 ? 'it' : 'one'} down and pass it around, " +
+        "#{n_bottles(number - 1)} of milk on the wall.\n"
+    end
+
+    def n_bottles(number)
+        case
+        when number > 1
+            "#{number} bottles"
+        when number == 1
+            "#{number} bottle"
+        else
+            'no more bottles'
+        end
     end
 end
