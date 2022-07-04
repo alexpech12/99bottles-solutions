@@ -6,8 +6,8 @@ class Bottles
         "#{n_bottles((number - 1) % 100)} of milk on the wall.\n"
     end
 
-    def verses(*numbers)
-        numbers.map { |number| verse(number) }.join("\n")
+    def verses(start, finish)
+        (finish..start).to_a.reverse.map { |number| verse(number) }.join("\n")
     end
 
     private
