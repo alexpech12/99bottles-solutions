@@ -1,9 +1,9 @@
 class Bottles
     def verse(number)
-        "#{n_bottles(number)} of milk on the wall, " +
+        "#{n_bottles(number).capitalize} of milk on the wall, " +
         "#{n_bottles(number)} of milk.\n" +
-        "Take #{number == 1 ? 'it' : 'one'} down and pass it around, " +
-        "#{n_bottles(number - 1)} of milk on the wall.\n"
+        third_line(number) +
+        "#{n_bottles((number - 1) % 100)} of milk on the wall.\n"
     end
 
     def n_bottles(number)
@@ -14,6 +14,14 @@ class Bottles
             "#{number} bottle"
         else
             'no more bottles'
+        end
+    end
+
+    def third_line(number)
+        if number == 0
+            'Go to the store and buy some more, '
+        else
+            "Take #{number == 1 ? 'it' : 'one'} down and pass it around, "
         end
     end
 end
